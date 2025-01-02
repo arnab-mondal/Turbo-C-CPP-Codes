@@ -1,0 +1,196 @@
+#include<stdio.h>
+#include<conio.h>
+#include<process.h>
+
+void display();
+
+void main()
+{
+	int key;
+	clrscr();
+	while(1)
+	{
+		display();
+		key=getch();
+		if(key == 13)
+		{
+			clrscr();
+		}
+		if(key == 27)
+		{
+			exit(0);
+		}
+	}
+}
+
+
+void display()
+{
+	int i;
+	clrscr();
+	printf("\n\n");
+	printf("%c",(char)218);
+	for(i=2;i<=79;i++)
+	{
+		if(i%7 == 0)
+		{
+			gotoxy(i,3);
+			printf("%c",(char)194);
+		}
+		else
+		{
+			gotoxy(i,3);
+			printf("%c",(char)196);
+		}
+	}
+	for(i=4;i<=20;i++)
+	{
+		if(i%2==0)
+		{
+			gotoxy(1,i);
+			printf("%c",(char)179);
+		}
+		else
+		{
+			gotoxy(1,i);
+			printf("%c",(char)195);
+		}
+	}
+	for(i=2;i<=79;i++)
+	{
+		if(i%7 == 0)
+		{
+			gotoxy(i,5);
+			printf("%c",(char)197);
+			gotoxy(i,4);
+			printf("%c",(char)179);
+		}
+		else
+		{
+			gotoxy(i,5);
+			printf("%c",(char)196);
+		}
+	}
+	for(i=2;i<=79;i++)
+	{
+		if(i%7 == 0)
+		{
+			gotoxy(i,7);
+			printf("%c",(char)197);
+			gotoxy(i,6);
+			printf("%c",(char)179);
+		}
+		else
+		{
+			gotoxy(i,7);
+			printf("%c",(char)196);
+		}
+	}
+	for(i=2;i<=79;i++)
+	{
+		if(i%7 == 0)
+		{
+			gotoxy(i,9);
+			printf("%c",(char)197);
+			gotoxy(i,8);
+			printf("%c",(char)179);
+		}
+		else
+		{
+			gotoxy(i,9);
+			printf("%c",(char)196);
+		}
+	}
+	for(i=2;i<=79;i++)
+	{
+		if(i%7 == 0)
+		{
+			gotoxy(i,11);
+			printf("%c",(char)197);
+			gotoxy(i,10);
+			printf("%c",(char)179);
+		}
+		else
+		{
+			gotoxy(i,11);
+			printf("%c",(char)196);
+		}
+	}
+	for(i=2;i<=79;i++)
+	{
+		if(i%7 == 0)
+		{
+			gotoxy(i,13);
+			printf("%c",(char)197);
+			gotoxy(i,12);
+			printf("%c",(char)179);
+		}
+		else
+		{
+			gotoxy(i,13);
+			printf("%c",(char)196);
+		}
+	}
+	for(i=2;i<=79;i++)
+	{
+		if(i%7 == 0)
+		{
+			gotoxy(i,15);
+			printf("%c",(char)197);
+			gotoxy(i,14);
+			printf("%c",(char)179);
+		}
+		else
+		{
+			gotoxy(i,15);
+			printf("%c",(char)196);
+		}
+	}
+	for(i=2;i<=79;i++)
+	{
+		if(i%7 == 0)
+		{
+			gotoxy(i,17);
+			printf("%c",(char)197);
+			gotoxy(i,16);
+			printf("%c",(char)179);
+		}
+		else
+		{
+			gotoxy(i,17);
+			printf("%c",(char)196);
+		}
+	}
+	for(i=2;i<=79;i++)
+	{
+		if(i%7 == 0)
+		{
+			gotoxy(i,19);
+			printf("%c",(char)197);
+			gotoxy(i,18);
+			printf("%c",(char)179);
+		}
+		else
+		{
+			gotoxy(i,19);
+			printf("%c",(char)196);
+		}
+	}
+	gotoxy(1,21);
+	printf("%c",(char)192);
+	for(i=2;i<=79;i++)
+	{
+		if(i%7 == 0)
+		{
+			gotoxy(i,21);
+			printf("%c",(char)193);
+			gotoxy(i,20);
+			printf("%c",(char)179);
+		}
+		else
+		{
+			gotoxy(i,21);
+			printf("%c",(char)196);
+		}
+	}
+}
