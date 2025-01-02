@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <conio.h>
+#include <fstream.h>
+#include <dir.h>
+void main(int argc, char *argv[])
+{
+	struct ffblk ffblk;
+	int done ;
+	fstream obj;
+	obj.open("list.txt",ios::out);
+	done =  findfirst("*_2.txt",&ffblk, 0);
+	while(!done)
+	{
+		obj<<ffblk.ff_name;
+		done = findnext(&ffblk);
+	}
+	obj.close();
+}
