@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <conio.h>
+#include <iostream.h>
+#include <dir.h>
+#include <stdlib.h>
+#include <fstream.h>
+void main(int argc, char *argv[])
+{
+	struct ffblk ffblk;
+	char input[1000];
+	fstream obj;
+	int done,count=0;
+	obj.open("untitled",ios::out);
+	done = findfirst("*.txt",&ffblk,0);
+	while(!done)
+	{
+		fstream obj2;
+		count = count + 1;
+		obj2.open(ffblk.ff_name,ios::in);
+		obj<<"\n"<<ffblk.ff_name<<" ";
+		obj2>>input;
+		obj2.close();
+		obj<<input;
+		done = findnext(&ffblk);
+	}
+	obj.close();
+	if(count!=0)
+	{
+		//rename("untitled","untitled.txt");
+      gotoxy(2,23);
+		printf("Almost %d record(s) found and saved",count);
+	}
+	else
+	{
+   	gotoxy(2,23);
+		printf("No records found, No file created!!");
+	}
+
+   if (argc==2)
+   {
+      printf("%s",argv[1]);
+   	rename("untitled",argv[1]);
+   }
+}

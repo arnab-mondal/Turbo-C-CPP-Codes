@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <fstream.h>
+#include <conio.h>
+#include <dir.h>
+void main(int argc, char *argv[])
+{
+	struct ffblk ffblk;
+   char input[1000];
+   char temp[1000];
+	int done;
+   fstream obj2;
+   obj2.open("list.txt",ios::out);
+   obj2.close();
+	//done = findfirst("22_*.txt",&ffblk,0);
+   done = findfirst(argv[1],&ffblk,0);
+   gotoxy(2,23);
+	while(!done)
+	{
+		//printf("%s",ffblk.ff_name);
+      fstream obj;
+      obj.open(ffblk.ff_name,ios::in);
+      obj>>input;
+      obj.close();
+      //obj2<<"\n"<<input;
+      fstream obj3;
+      obj3.open("list.txt",ios::in);
+      fstream obj2;
+	   obj2.open("list.txt",ios::app);
+      while(obj3)
+      {
+      	obj3>>temp;
+         if(strcmp(temp,input)==0)
+         {
+         	printf("Repeated Values identified!!!");
+            obj.close();
+            obj2.close();
+            obj3.close();
+            //getch();
+            remove("list.txt");
+            return;
+         }
+         //cout<<temp<<"-t i-"<<input;
+      }
+      obj2<<"\n"<<input;
+      obj2.close();
+		done=findnext(&ffblk);
+	}
+   obj2.close();
+   printf("Primary Key Accepted");
+   //rename ("list.txt",argv[1]);
+	getch();
+}
